@@ -8,15 +8,15 @@ const counterState = atom({
 
 const x2Selector = selector({
   key: "x2Selector",
-  get: ({get}) => {
-    const count = get(counterState)
-    return count * 2
-  }
-})
+  get: ({ get }) => {
+    const count = get(counterState);
+    return count * 2;
+  },
+});
 
 function App() {
   const [count, setCount] = useRecoilState(counterState);
-  const doubleCount = useRecoilValue(x2Selector)
+  const doubleCount = useRecoilValue(x2Selector);
 
   const increment = () => {
     setCount(count + 1);
@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <p> Count: {count} </p>
       <p> Double Count: {doubleCount} </p>
-      
+
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
     </div>
